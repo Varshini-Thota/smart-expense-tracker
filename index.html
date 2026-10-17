@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Expense Tracker</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header class="app-header">
+
+        <h1>Smart Expense Tracker</h1>
+
+        <p>
+            Track, manage and analyze your expenses easily.
+        </p>
+
+    </header>
+
+
+    <!-- ========================= -->
+    <!-- ADD EXPENSE -->
+    <!-- ========================= -->
+
+    <section>
+
+        <h2>Add Expense</h2>
+
+
+        <label for="personName">
+            Person Name
+        </label>
+
+        <input
+            type="text"
+            id="personName"
+            placeholder="Enter person name"
+        >
+
+
+        <label for="expenseName">
+            Expense Name
+        </label>
+
+        <input
+            type="text"
+            id="expenseName"
+            placeholder="Enter expense name"
+        >
+
+
+        <label for="amount">
+            Amount
+        </label>
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Enter amount"
+            min="1"
+        >
+
+
+        <label for="category">
+            Category
+        </label>
+
+        <select id="category">
+
+            <option value="">
+                Select Category
+            </option>
+
+            <option value="Food">
+                Food
+            </option>
+
+            <option value="Travel">
+                Travel
+            </option>
+
+            <option value="Shopping">
+                Shopping
+            </option>
+
+            <option value="Bills">
+                Bills
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+
+        <label for="date">
+            Date
+        </label>
+
+        <input
+            type="date"
+            id="date"
+        >
+
+
+        <button id="addExpense">
+            Add Expense
+        </button>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- DASHBOARD -->
+    <!-- ========================= -->
+
+    <section>
+
+        <h2>Dashboard</h2>
+
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card">
+
+                <span class="dashboard-icon">
+                    ₹
+                </span>
+
+                <h3>Total Spent</h3>
+
+                <p>
+                    ₹<span id="dashboardTotal">0</span>
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span class="dashboard-icon">
+                    👥
+                </span>
+
+                <h3>Total People</h3>
+
+                <p id="totalPeople">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span class="dashboard-icon">
+                    🧾
+                </span>
+
+                <h3>Transactions</h3>
+
+                <p id="totalTransactions">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span class="dashboard-icon">
+                    📂
+                </span>
+
+                <h3>Categories</h3>
+
+                <p id="totalCategories">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- MY EXPENSES -->
+    <!-- ========================= -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>My Expenses</h2>
+
+                <p class="section-subtitle">
+                    View and manage all your transactions.
+                </p>
+
+            </div>
+
+            <div class="total-badge">
+
+                Total:
+                ₹<span id="totalAmount">0</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="filters">
+
+            <label for="searchExpense">
+                Search Expenses
+            </label>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchExpense"
+                    placeholder="Search by person, expense, category or date"
+                >
+
+                <button id="searchButton">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPENSE CARDS -->
+
+        <div id="expenseList"></div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- CATEGORY TOTALS -->
+    <!-- ========================= -->
+
+    <section>
+
+        <h2>Category Totals</h2>
+
+        <p class="section-subtitle">
+            See where your money is being spent.
+        </p>
+
+        <div id="categoryTotalsList"></div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- PIE CHART -->
+    <!-- ========================= -->
+
+    <section>
+
+        <h2>Expense Distribution</h2>
+
+        <p class="section-subtitle">
+            Visual breakdown of your expenses by category.
+        </p>
+
+        <div id="expenseChart"></div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- INDIVIDUAL TOTALS -->
+    <!-- ========================= -->
+
+    <section>
+
+        <h2>Individual Totals</h2>
+
+        <p class="section-subtitle">
+            Total spending for each person.
+        </p>
+
+        <div id="individualTotals"></div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- CLEAR ALL -->
+    <!-- ========================= -->
+
+    <button id="clearAll">
+        Clear All Expenses
+    </button>
+
+
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
